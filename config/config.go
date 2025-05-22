@@ -1,8 +1,7 @@
 /*
-
 MIT License
 
-Copyright (c) 2019 David Suarez
+# Copyright (c) 2019 David Suarez
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,7 +20,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
 */
 package config
 
@@ -35,11 +33,13 @@ func InitConfig() {
 	viper.AddConfigPath("$HOME/.solaredge-exporter")
 	viper.SetDefault("SolarEdge.InverterAddress", "")
 	viper.SetDefault("SolarEdge.InverterPort", 0)
+	viper.SetDefault("SolarEdge.ClientId", 1)
 	viper.SetDefault("Exporter.Interval", 5)
 	viper.SetDefault("Exporter.ListenAddress", "")
 	viper.SetDefault("Exporter.ListenPort", 2112)
 	viper.BindEnv("SolarEdge.InverterAddress", "INVERTER_ADDRESS")
 	viper.BindEnv("SolarEdge.InverterPort", "INVERTER_PORT")
+	viper.BindEnv("SolarEdge.ClientId", "INVERTER_CLIENT_ID")
 	viper.BindEnv("Exporter.Interval", "EXPORTER_INTERVAL")
 	viper.BindEnv("Exporter.ListenAddress", "EXPORTER_ADDRESS")
 	viper.BindEnv("Exporter.ListenPort", "EXPORTER_PORT")
